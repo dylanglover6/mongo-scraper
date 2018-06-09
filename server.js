@@ -90,7 +90,7 @@ app.get("/scrape", function(req, res) {
   });
 });
 
-app.get("/postings", function(req, res) {
+app.get("/", function(req, res) {
   db.Posting.find({}).sort({id: -1})
     .then(function(data) {
       res.render("index", {posting: data});

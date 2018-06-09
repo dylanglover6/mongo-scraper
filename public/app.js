@@ -1,5 +1,5 @@
 //populate commentCol to show and create comments
-$(document).on("click", $(".commentBtn"), function() {
+$(".commentBtn").on("click", function() {
   $("#commentCol").empty()
   var thisId = $(".commentBtn").attr("data-id");
   console.log(thisId)
@@ -29,7 +29,7 @@ $(document).on("click", $(".commentBtn"), function() {
 })
 
 // When you click the savenote button
-$(document).on("click", $("#savenote"), function() {
+$("#savenote").on("click", function() {
   // Grab the id associated with the article from the submit button
   var thisId = $("#savenote").attr("data-id");
 
@@ -56,3 +56,11 @@ $(document).on("click", $("#savenote"), function() {
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });
+
+$("#scrapeBtn").on("click", function() {
+  $.ajax({
+    method: "GET",
+    url: "/scrape"
+  })
+  location.reload();
+})
