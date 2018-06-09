@@ -15,7 +15,7 @@ var PostingSchema = new Schema({
   price: {
     type: String
   },
-  img: {
+  location: {
     type: String
   },
   comments: [

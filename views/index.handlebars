@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <ul class="list-group">
+        {{#each posting}}
+        <li class="list-group-item">
+          <p>
+            <span>{{this.price}}</span>
+            <br>
+            <span>{{this.title}}</span> 
+            <span>{{this.location}}</span>
+            <br>
+            <a href="{{this.link}}" class="btn btn-default" target="_blank">View Listing</a>
+            <p  data-id="{{this._id}}" class="commentBtn btn btn-default">Comment</p>
+          </p>
+        </li>
+        {{/each}}
+      </ul>  
+    </div>
+
+    <div id="commentCol" class="col-sm-4">
+      
+
+    </div>
+  </div>
+</div>
