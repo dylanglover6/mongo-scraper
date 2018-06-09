@@ -1,7 +1,7 @@
 //populate commentCol to show and create comments
 $(".commentBtn").on("click", function() {
   $("#commentCol").empty()
-  var thisId = $(".commentBtn").attr("data-id");
+  var thisId = $(this).attr("data-id");
   console.log(thisId)
   
   $.ajax({
@@ -26,12 +26,13 @@ $(".commentBtn").on("click", function() {
           $("#commentDisplay").val(data.note.title);
        }
     });
-})
+});
 
 // When you click the savenote button
 $("#savenote").on("click", function() {
   // Grab the id associated with the article from the submit button
-  var thisId = $("#savenote").attr("data-id");
+  var thisId = $(this).attr("data-id");
+  console.log(thisId);
 
   // Run a POST request to change the note, using what's entered in the inputs
   $.ajax({
