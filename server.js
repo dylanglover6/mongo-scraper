@@ -42,7 +42,8 @@ app.use((req, res, next) => {
 
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/craigslistScraper");
-var MONGODB_URI = process.env.MONGODB_URI
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 // Routes
